@@ -1,8 +1,10 @@
-local console = require("src.common.console")
-local const = require("src.common.const")
 
+local console = require("src.common.console")
+local const   = require("src.common.const")
+
+--- Is this BizHawk Emulator?
 ---@return boolean
-local function check_bizhawk()
+local function check()
     if gameinfo and gameinfo.getromname
     then
         local romname = gameinfo.getromname()
@@ -12,8 +14,7 @@ local function check_bizhawk()
         end
         return true
     end
-
     return false
 end
 
-return check_bizhawk
+return check

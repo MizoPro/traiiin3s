@@ -1,20 +1,26 @@
---- Platform-dependant code
-local runtime = {}
+--- Platform-dependant code wrapped in a common API layer
+---@type table
+local runtime =
+{
+    name    =  "", 
+    Addr    = {},
+    Gui     = {},
+    Style   = {}
+}
 
-runtime.ADDR = {}
-runtime.GUI = {}
 -- runtime.input = {}
 
-local __bounded = false -- only `main.lua` could bind
+local guard = false -- Guard to only bind *once* from `main.lua`.
 
 function runtime.bind( rt )
-    if not __bounded
+    if not guard
     then
         for k,v in pairs(rt)
         do
             runtime[k] = v
         end
-        __bounded = true
+        guard = true
+    -- else print("[WARN] Cannot bind. Already bound with " .. rt.name )
     end
 end
 

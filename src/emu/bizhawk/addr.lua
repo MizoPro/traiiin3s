@@ -1,4 +1,7 @@
-local ADDR =
+
+--- All memory addresses should be declared here.
+---@type table
+local Addr =
 {
     timer = 0x011377,
     players =
@@ -14,13 +17,17 @@ local ADDR =
         {
             base = 0x069104,
             life = 0x0691A3,                  -- offset 0x9F
-            juggle_timer = 0x06902f,
+
+            -- All the other addresses I currently know were gathered by other people.
+
+            -- However, these two are the only ones that I had to find manually, by trial and error
+            juggle_timer = 0x06902f, 
             juggle_potential = 0x069031,
 
-            -- ChatGPT Just Lying™
-            ai_juggle_timer = 0x02069A07, -- Curious what is actually stored here. 
+            -- ChatGPT Just Lying™ to me
+            -- ai_juggle_timer = 0x069A07, -- Curious what is actually stored here. 
         }
     },
 }
 
-return ADDR
+return Addr

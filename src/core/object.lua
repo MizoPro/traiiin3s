@@ -1,17 +1,16 @@
----@class core.object
----@field super core.object
+---@class Object
+---@field super Object
 ---The parent of every class object
+--- makes declaring and using classes a lot easier
 local Object = {}
-
 Object.__index = Object
 
 ---Can be overrided by child objects to implement a constructor.
 function Object:new(...) end
 
----@return core.object
 function Object:extend()
   local cls = {}
-  for k, v in pairs(self) do
+  for k,v in pairs(self) do
     if k:find("__") == 1 then
       cls[k] = v
     end
@@ -22,11 +21,11 @@ function Object:extend()
   return cls
 end
 
----Check if the object is strictly of the given type.
----@param T any
----@return boolean
-function Object:is(T)
-  return getmetatable(self) == T
+---Methamethod to allow using the object call as a constructor.
+function Object:__call(...)
+  local obj = setmetatable({}, self)
+  obj:new(...)
+  return obj
 end
 
 ---Check if the object inherits from the given type.
@@ -43,18 +42,17 @@ function Object:extends(T)
   return false
 end
 
+---Check if the object is strictly of the given type.
+---@param T any
+---@return boolean
+function Object:is(T)
+  return getmetatable(self) == T
+end
+
 ---Metamethod to get a string representation of an object.
 ---@return string
 function Object:__tostring()
   return "[Object]"
-end
-
----Methamethod to allow using the object call as a constructor.
----@return core.object
-function Object:__call(...)
-  local obj = setmetatable({}, self)
-  obj:new(...)
-  return obj
 end
 
 return Object

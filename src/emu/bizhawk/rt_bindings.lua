@@ -1,9 +1,14 @@
+--- Runtime bindings for BizHawk
+---@type table
 local bindings = {}
 
-local GUI      = require("src.emu.bizhawk.gui")
-local ADDR     = require("src.emu.bizhawk.ADDR")
+local Gui      = require("src.emu.bizhawk.gui")
+local Addr     = require("src.emu.bizhawk.addr")
+local Style    = require("src.emu.bizhawk.style")
 
-bindings.GUI   = GUI
-bindings.ADDR  = ADDR
+bindings.name  = "BizHawk"
+bindings.Gui   = Gui
+bindings.Addr  = Addr
+bindings.Style = Style
 
 return bindings

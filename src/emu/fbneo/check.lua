@@ -1,10 +1,10 @@
+
 local console = require("src.common.console")
-local const = require("src.common.const")
+local const   = require("src.common.const")
 
 --- Is this Fightcade's fbneo emulator?
 ---@return boolean
----
-local function check_fbneo()
+local function check()
     if emu and emu.romname
     then
         local romname = emu.romname()
@@ -17,4 +17,4 @@ local function check_fbneo()
     return false
 end
 
-return check_fbneo
+return check
