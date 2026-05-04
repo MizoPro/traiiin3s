@@ -1,6 +1,18 @@
 --- Console display functions
 local console = console or {}
 
+console.log = console.log or function(msg)
+    print(msg)
+end
+
+function console.table( arr )
+    local msg = ""
+    for k,v in pairs(arr) do
+        msg = msg .. "\n> `" .. tostring(k) .. "` = " .. tostring(v)
+    end
+    console.log( msg )
+end
+
 function console.splash(info)
     print("@------------------------")
     print("@")

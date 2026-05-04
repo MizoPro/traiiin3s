@@ -12,4 +12,10 @@ Style.juggle_meter =
     text   = 0xFFFFFFFF,
 }
 
+Style.input_history = 
+{
+    color = 0xFFD6E3EF, 
+    bgColor = 0xFF101000
+}
+
 return Style

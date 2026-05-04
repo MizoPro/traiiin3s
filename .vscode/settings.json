@@ -9,7 +9,6 @@
     "event",
     "forms",
     "gameinfo",
-    //"genesis",
     "gui",
     "input",
     "joypad",
@@ -18,12 +17,10 @@
     "memory",
     "memorysavestate",
     "movie",
-    // "nds",
-    //"nes",
     "savestate",
-    // "snes",
     "SQL",
     "tastudio",
-    "userdata"
+    "userdata",
+    "gd"
   ]
 }

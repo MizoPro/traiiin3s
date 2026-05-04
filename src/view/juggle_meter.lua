@@ -64,18 +64,19 @@ function JuggleMeter:display()
         Gui.LineView_draw(x + p, y, 0, h, Style.juggle_meter.border)
     end
 
-    if self.remaining ~= nil then
-        Gui.BoxView_draw(x, y, self.remaining, h, Style.juggle_meter.border, Style.juggle_meter.fill)
-        if self.timer > 0 then
-            if self.remaining < 10 then
-                x = x - 1
-            elseif self.remaining < 100 then
-                x = x - 3
-            else
-                x = x - 5
-            end
-            Gui.TextView_draw(x + self.remaining, y + OFFSET_TIMER_Y, self.remaining, Style.juggle_meter.text)
+    -- Nothing to display
+    if self.remaining == nil then return end
+
+    Gui.BoxView_draw(x, y, self.remaining, h, Style.juggle_meter.border, Style.juggle_meter.fill)
+    if self.timer > 0 then
+        if self.remaining < 10 then
+            x = x - 1
+        elseif self.remaining < 100 then
+            x = x - 3
+        else
+            x = x - 5
         end
+        Gui.TextView_draw(x + self.remaining, y + OFFSET_TIMER_Y, self.remaining, Style.juggle_meter.text)
     end
 end
 

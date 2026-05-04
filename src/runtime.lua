@@ -5,6 +5,7 @@ local runtime =
     name    =  "", 
     Addr    = {},
     Gui     = {},
+    Input   = {},
     Style   = {}
 }
 

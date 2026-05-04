@@ -92,10 +92,17 @@ Feel free to open an [Issue] in case of a Bug, a Request, a Suggestion or an Inq
 
 ## Changelog
 
+### v0.0.2 (05/04/2026)
+
+* Tested on Fightcade. It Works!
+* Finalized the final structured.
+* Added `input_history` display, for both players.
+
 ### v0.0.1 (28/04/2026)
 
 * Made the Repository
 * Added the [README]
+* Added `juggle_meter` as a proof of concept.
 
 ## Roadmap
 
